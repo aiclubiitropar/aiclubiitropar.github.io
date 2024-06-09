@@ -1,90 +1,85 @@
 body {
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     margin: 20px;
-    padding: 5px;
-    color:white;
-    font-family: 'Roboto', sans-serif;
-}
-
-.blog-fp-title {
-    font-size: 30px;
-    text-align: center;
-}
-.blog-fp-date {
     color: white;
-    text-decoration: none;
-    font-size: 14px;
+}
+.blog-post{
+    padding-bottom: 5rem;
+}
+
+.blog-post-data{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    padding-block: 2.5rem;
+}
+img {
+    scale:80%;
+}
+.blog-post-title{
+    font-size: clamp(3rem, 5vw, 6rem); 
 }
 
-.t1 {
-    padding:5px;
+.blog-post-data .article-data{
+    margin-bottom: 2.5rem;
+}
+
+.blog-post-data img{
+    width: 100%;
+    height: var(--item-min-height-sm);
+    object-fit: cover;
+    object-position: center 10%;
+}
+.container {
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+.blog-post-container .container{
+    max-width: 90rem;
+    padding: 0;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    gap: var(--gap);
 }
 
-.t1-image {
-    width: auto;
-    height: auto;
-    margin-right: 10px;
-    border-radius: 5px;
+.quote{
+    background-color: var(--secondary-background-color);
+    padding: 2.5rem;
 }
 
-.t1-content {
-    font-size: 16px;
+.quote p{
+    font-style: italic;
 }
 
-.t2 {
-    padding:5px;
-    display: flex;
-    flex-direction: row;
+.quote span{
+    font-size: 5rem;
 }
 
-.t2-image {
-    width: auto;
-    height: auto;
-    margin-left: 10px;
-    border-radius: 5px;
-}
+@media screen and (min-width: 768px) {
 
-.t2-content {
-    font-size: 16px;
-}
-
-
-.t3-content {
-    font-size: 16px;
-}
-
-@media screen and (max-width: 700px) {
-    .t1 {
-        flex-direction: column;
-        justify-content: center;
-    }
-    .t2 {
-        flex-direction: column;
-        justify-content: center;
-    }
-    .t1, .t2,  .t3-content, .t2-image, .t1-image {
-        margin: 0;
-        padding: 5;
+    .blog-post-data img{
+        height: var(--item-min-height-md);;
     }
 }
 
-@media screen and (min-width: 1400px) {
-    .t1-content {
-        font-size: 30px;
+@media screen and (min-width: 1024px) {
+    /* Fancy button animation effect */
+    .btn.fancy-border:hover::before{
+        animation: animate_border .75s linear infinite
     }
-    .t2-content {
-        font-size: 30px;
+
+    @keyframes animate_border{
+        to{
+            transform:translateX(-50%)
+        }
     }
-    .t3-content {
-        font-size: 30px;
-    }
-    .blog-fp-title {
-        font-size: 50px;
-    }
-    .blog-fp-date {
-        font-size: 20px;
+
+   
+
+    .blog-post-data img{
+        height: 40rem;
     }
 }
+
